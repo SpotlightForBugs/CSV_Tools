@@ -189,19 +189,21 @@ group.add_argument('-i','--image',help='Convert the csv file to an image',action
 parser.add_argument('-o','--output',help='The path to the output file',action='store',dest='output')
 parser.add_argument('-v','--verbose',help='Print the table',action='store_true',dest='verbose',required=False,default=False)
 args = parser.parse_args()
+
+
 def put_argparse_help_in_the_readme():
-    """This function puts the argparse help in the readme, in the section called "Usage"""
-    readme = open('README.md','r')
-    readme_lines = readme.readlines()
-    readme.close()
-    readme = open('README.md','w')
-    for line in readme_lines:
-        if line == '## Usage\n':
-            readme.write(line)
-            readme.write(parser.format_help())
-        else:
-            readme.write(line)
-    readme.close()
+    """This function puts the argparse help in the readme, in the section called "Usage"
+        it deletes the old usage section and replaces it with the new one
+        the section starts with the line "usage: csv_tools.py [-h]" and ends with the line <!--end_of_usage-->.
+        
+        """
+    readme = open('README.md','r').read()
+    start = readme.find('usage: csv_tools.py [-h]')
+    end = readme.find('<!--end_of_usage-->')
+    readme = readme[:start] + readme[end:]
+    readme = readme.replace('<!--end_of_usage-->',f"{parser.format_help()}\n<!--end_of_usage-->")
+    open('README.md','w').write(readme)
+  
     
 
 
@@ -284,7 +286,7 @@ if __name__ == '__main__':
                 print(output)
             elif args.format == 'xlsx' and not args.output or args.format == 'pdf' and not args.output or args.format == 'image' and not args.output:
                 print('The output file was not specified, the output will be saved in the same folder as the csv file')
-                print(f'The output file is called {args.path.replace(".csv",".xlsx")}')
+                
      
      
      

@@ -153,3 +153,8 @@ cython_debug/
 
 out.*
 output.*
+*.pdf
+*.json
+*.xml
+*.xlsx
+*.xls
