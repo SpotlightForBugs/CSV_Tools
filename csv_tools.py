@@ -5,10 +5,7 @@
 
 import argparse
 import csv
-import json
 import os
-import re
-import sys
 import time
 from PIL import Image, ImageDraw, ImageFont
 import pandas as pd
