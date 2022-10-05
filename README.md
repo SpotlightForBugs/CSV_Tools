@@ -6,6 +6,9 @@ CSV_Tools is a collection of tools for working with CSV files.
 It is written in Python and is available on GitHub.
 
 ---
+### Screenshots
+![Screenshot](https://github.com/SpotlightForBugs/CSV_Tools/blob/pro/img/output1664969704.6953902.png?raw=true)
+---
 
 ## Installation
 

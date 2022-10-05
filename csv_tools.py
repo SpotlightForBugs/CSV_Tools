@@ -5,10 +5,7 @@
 
 import argparse
 import csv
-import json
 import os
-import re
-import sys
 import time
 from PIL import Image, ImageDraw, ImageFont
 import pandas as pd
@@ -436,7 +433,7 @@ if __name__ == "__main__":
                 overwrite = input(
                     f'The file "{args.output}" already exists, do you want to overwrite it? (y/n)'
                 )
-                if overwrite == "y" or overwrite == "Y":
+                if overwrite in ("y", "Y"):
 
                     with open(args.output, "w") as output_file:
                         output_file.write(output)
@@ -444,7 +441,7 @@ if __name__ == "__main__":
                     print("The file was not overwritten")
 
                     create_new_file = input("Do you want to create a new file? (y/n)")
-                    if create_new_file == "y" or create_new_file == "Y":
+                    if create_new_file in ("y", "Y"):
                         new_file_name = input("Enter the name of the new file: ")
                         with open(new_file_name, "w") as output_file:
                             output_file.write(output)
@@ -460,12 +457,7 @@ if __name__ == "__main__":
 
         else:
 
-            if (
-                args.format != "xlsx"
-                and args.format != "pdf"
-                and args.format != "image"
-                and args.format != "csv"
-            ):
+            if args.format not in ("xlsx", "pdf", "image", "csv"):
 
                 print("The output file was not specified, the output will be printed")
                 print(output)
