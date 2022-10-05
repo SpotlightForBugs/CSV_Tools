@@ -20,7 +20,7 @@ pip install -r requirements.txt
 ---
 
 ## Usage
-usage: csv_tools.py [-h] -p PATH [-d DELIMITER] [-q VALUE] [-f {html,xlsx,json,xml,sql,pdf,dict,md}] [-o OUTPUT] [-v]
+usage: csv_tools.py [-h] -p PATH [-d DELIMITER] [-q VALUE] [-x | -j | -t | -htm | -xm | -s | -pdf | -m | -i] [-o OUTPUT] [-v]
 
 This program contains lots of functions for working with csv files
 
@@ -31,13 +31,1025 @@ options:
                         The delimiter of the csv file, if not specified, the program will try to recognize the delimiter
   -q VALUE, --query VALUE
                         The value to search for in the csv file
-  -f {html,xlsx,json,xml,sql,pdf,dict,md}, --format {html,xlsx,json,xml,sql,pdf,dict,md}
-                        The format to convert the csv file to
+  -x, --xlsx            Convert the csv file to xlsx
+  -j, --json            Convert the csv file to json
+  -t, --txt             Convert the csv file to txt
+  -htm, --html          Convert the csv file to html
+  -xm, --xml            Convert the csv file to xml
+  -s, --sql             Convert the csv file to sql
+  -pdf, --pdf           Convert the csv file to pdf
+  -m, --md              Convert the csv file to markdown
+  -i, --image           Convert the csv file to an image
   -o OUTPUT, --output OUTPUT
                         The path to the output file
   -v, --verbose         Print the table
+usage: csv_tools.py [-h] -p PATH [-d DELIMITER] [-q VALUE] [-x | -j | -t | -htm | -xm | -s | -pdf | -m | -i] [-o OUTPUT] [-v]
 
----
+This program contains lots of functions for working with csv files
+
+options:
+  -h, --help            show this help message and exit
+  -p PATH, --path PATH  The path to the csv file
+  -d DELIMITER, --delimiter DELIMITER
+                        The delimiter of the csv file, if not specified, the program will try to recognize the delimiter
+  -q VALUE, --query VALUE
+                        The value to search for in the csv file
+  -x, --xlsx            Convert the csv file to xlsx
+  -j, --json            Convert the csv file to json
+  -t, --txt             Convert the csv file to txt
+  -htm, --html          Convert the csv file to html
+  -xm, --xml            Convert the csv file to xml
+  -s, --sql             Convert the csv file to sql
+  -pdf, --pdf           Convert the csv file to pdf
+  -m, --md              Convert the csv file to markdown
+  -i, --image           Convert the csv file to an image
+  -o OUTPUT, --output OUTPUT
+                        The path to the output file
+  -v, --verbose         Print the table
+usage: csv_tools.py [-h] -p PATH [-d DELIMITER] [-q VALUE] [-x | -j | -t | -htm | -xm | -s | -pdf | -m | -i] [-o OUTPUT] [-v]
+
+This program contains lots of functions for working with csv files
+
+options:
+  -h, --help            show this help message and exit
+  -p PATH, --path PATH  The path to the csv file
+  -d DELIMITER, --delimiter DELIMITER
+                        The delimiter of the csv file, if not specified, the program will try to recognize the delimiter
+  -q VALUE, --query VALUE
+                        The value to search for in the csv file
+  -x, --xlsx            Convert the csv file to xlsx
+  -j, --json            Convert the csv file to json
+  -t, --txt             Convert the csv file to txt
+  -htm, --html          Convert the csv file to html
+  -xm, --xml            Convert the csv file to xml
+  -s, --sql             Convert the csv file to sql
+  -pdf, --pdf           Convert the csv file to pdf
+  -m, --md              Convert the csv file to markdown
+  -i, --image           Convert the csv file to an image
+  -o OUTPUT, --output OUTPUT
+                        The path to the output file
+  -v, --verbose         Print the table
+usage: csv_tools.py [-h] -p PATH [-d DELIMITER] [-q VALUE] [-x | -j | -t | -htm | -xm | -s | -pdf | -m | -i] [-o OUTPUT] [-v]
+
+This program contains lots of functions for working with csv files
+
+options:
+  -h, --help            show this help message and exit
+  -p PATH, --path PATH  The path to the csv file
+  -d DELIMITER, --delimiter DELIMITER
+                        The delimiter of the csv file, if not specified, the program will try to recognize the delimiter
+  -q VALUE, --query VALUE
+                        The value to search for in the csv file
+  -x, --xlsx            Convert the csv file to xlsx
+  -j, --json            Convert the csv file to json
+  -t, --txt             Convert the csv file to txt
+  -htm, --html          Convert the csv file to html
+  -xm, --xml            Convert the csv file to xml
+  -s, --sql             Convert the csv file to sql
+  -pdf, --pdf           Convert the csv file to pdf
+  -m, --md              Convert the csv file to markdown
+  -i, --image           Convert the csv file to an image
+  -o OUTPUT, --output OUTPUT
+                        The path to the output file
+  -v, --verbose         Print the table
+usage: csv_tools.py [-h] -p PATH [-d DELIMITER] [-q VALUE] [-x | -j | -t | -htm | -xm | -s | -pdf | -m | -i] [-o OUTPUT] [-v]
+
+This program contains lots of functions for working with csv files
+
+options:
+  -h, --help            show this help message and exit
+  -p PATH, --path PATH  The path to the csv file
+  -d DELIMITER, --delimiter DELIMITER
+                        The delimiter of the csv file, if not specified, the program will try to recognize the delimiter
+  -q VALUE, --query VALUE
+                        The value to search for in the csv file
+  -x, --xlsx            Convert the csv file to xlsx
+  -j, --json            Convert the csv file to json
+  -t, --txt             Convert the csv file to txt
+  -htm, --html          Convert the csv file to html
+  -xm, --xml            Convert the csv file to xml
+  -s, --sql             Convert the csv file to sql
+  -pdf, --pdf           Convert the csv file to pdf
+  -m, --md              Convert the csv file to markdown
+  -i, --image           Convert the csv file to an image
+  -o OUTPUT, --output OUTPUT
+                        The path to the output file
+  -v, --verbose         Print the table
+usage: csv_tools.py [-h] -p PATH [-d DELIMITER] [-q VALUE] [-x | -j | -t | -htm | -xm | -s | -pdf | -m | -i] [-o OUTPUT] [-v]
+
+This program contains lots of functions for working with csv files
+
+options:
+  -h, --help            show this help message and exit
+  -p PATH, --path PATH  The path to the csv file
+  -d DELIMITER, --delimiter DELIMITER
+                        The delimiter of the csv file, if not specified, the program will try to recognize the delimiter
+  -q VALUE, --query VALUE
+                        The value to search for in the csv file
+  -x, --xlsx            Convert the csv file to xlsx
+  -j, --json            Convert the csv file to json
+  -t, --txt             Convert the csv file to txt
+  -htm, --html          Convert the csv file to html
+  -xm, --xml            Convert the csv file to xml
+  -s, --sql             Convert the csv file to sql
+  -pdf, --pdf           Convert the csv file to pdf
+  -m, --md              Convert the csv file to markdown
+  -i, --image           Convert the csv file to an image
+  -o OUTPUT, --output OUTPUT
+                        The path to the output file
+  -v, --verbose         Print the table
+usage: csv_tools.py [-h] -p PATH [-d DELIMITER] [-q VALUE] [-x | -j | -t | -htm | -xm | -s | -pdf | -m | -i] [-o OUTPUT] [-v]
+
+This program contains lots of functions for working with csv files
+
+options:
+  -h, --help            show this help message and exit
+  -p PATH, --path PATH  The path to the csv file
+  -d DELIMITER, --delimiter DELIMITER
+                        The delimiter of the csv file, if not specified, the program will try to recognize the delimiter
+  -q VALUE, --query VALUE
+                        The value to search for in the csv file
+  -x, --xlsx            Convert the csv file to xlsx
+  -j, --json            Convert the csv file to json
+  -t, --txt             Convert the csv file to txt
+  -htm, --html          Convert the csv file to html
+  -xm, --xml            Convert the csv file to xml
+  -s, --sql             Convert the csv file to sql
+  -pdf, --pdf           Convert the csv file to pdf
+  -m, --md              Convert the csv file to markdown
+  -i, --image           Convert the csv file to an image
+  -o OUTPUT, --output OUTPUT
+                        The path to the output file
+  -v, --verbose         Print the table
+usage: csv_tools.py [-h] -p PATH [-d DELIMITER] [-q VALUE] [-x | -j | -t | -htm | -xm | -s | -pdf | -m | -i] [-o OUTPUT] [-v]
+
+This program contains lots of functions for working with csv files
+
+options:
+  -h, --help            show this help message and exit
+  -p PATH, --path PATH  The path to the csv file
+  -d DELIMITER, --delimiter DELIMITER
+                        The delimiter of the csv file, if not specified, the program will try to recognize the delimiter
+  -q VALUE, --query VALUE
+                        The value to search for in the csv file
+  -x, --xlsx            Convert the csv file to xlsx
+  -j, --json            Convert the csv file to json
+  -t, --txt             Convert the csv file to txt
+  -htm, --html          Convert the csv file to html
+  -xm, --xml            Convert the csv file to xml
+  -s, --sql             Convert the csv file to sql
+  -pdf, --pdf           Convert the csv file to pdf
+  -m, --md              Convert the csv file to markdown
+  -i, --image           Convert the csv file to an image
+  -o OUTPUT, --output OUTPUT
+                        The path to the output file
+  -v, --verbose         Print the table
+usage: csv_tools.py [-h] -p PATH [-d DELIMITER] [-q VALUE] [-x | -j | -t | -htm | -xm | -s | -pdf | -m | -i] [-o OUTPUT] [-v]
+
+This program contains lots of functions for working with csv files
+
+options:
+  -h, --help            show this help message and exit
+  -p PATH, --path PATH  The path to the csv file
+  -d DELIMITER, --delimiter DELIMITER
+                        The delimiter of the csv file, if not specified, the program will try to recognize the delimiter
+  -q VALUE, --query VALUE
+                        The value to search for in the csv file
+  -x, --xlsx            Convert the csv file to xlsx
+  -j, --json            Convert the csv file to json
+  -t, --txt             Convert the csv file to txt
+  -htm, --html          Convert the csv file to html
+  -xm, --xml            Convert the csv file to xml
+  -s, --sql             Convert the csv file to sql
+  -pdf, --pdf           Convert the csv file to pdf
+  -m, --md              Convert the csv file to markdown
+  -i, --image           Convert the csv file to an image
+  -o OUTPUT, --output OUTPUT
+                        The path to the output file
+  -v, --verbose         Print the table
+usage: csv_tools.py [-h] -p PATH [-d DELIMITER] [-q VALUE] [-x | -j | -t | -htm | -xm | -s | -pdf | -m | -i] [-o OUTPUT] [-v]
+
+This program contains lots of functions for working with csv files
+
+options:
+  -h, --help            show this help message and exit
+  -p PATH, --path PATH  The path to the csv file
+  -d DELIMITER, --delimiter DELIMITER
+                        The delimiter of the csv file, if not specified, the program will try to recognize the delimiter
+  -q VALUE, --query VALUE
+                        The value to search for in the csv file
+  -x, --xlsx            Convert the csv file to xlsx
+  -j, --json            Convert the csv file to json
+  -t, --txt             Convert the csv file to txt
+  -htm, --html          Convert the csv file to html
+  -xm, --xml            Convert the csv file to xml
+  -s, --sql             Convert the csv file to sql
+  -pdf, --pdf           Convert the csv file to pdf
+  -m, --md              Convert the csv file to markdown
+  -i, --image           Convert the csv file to an image
+  -o OUTPUT, --output OUTPUT
+                        The path to the output file
+  -v, --verbose         Print the table
+usage: csv_tools.py [-h] -p PATH [-d DELIMITER] [-q VALUE] [-x | -j | -t | -htm | -xm | -s | -pdf | -m | -i] [-o OUTPUT] [-v]
+
+This program contains lots of functions for working with csv files
+
+options:
+  -h, --help            show this help message and exit
+  -p PATH, --path PATH  The path to the csv file
+  -d DELIMITER, --delimiter DELIMITER
+                        The delimiter of the csv file, if not specified, the program will try to recognize the delimiter
+  -q VALUE, --query VALUE
+                        The value to search for in the csv file
+  -x, --xlsx            Convert the csv file to xlsx
+  -j, --json            Convert the csv file to json
+  -t, --txt             Convert the csv file to txt
+  -htm, --html          Convert the csv file to html
+  -xm, --xml            Convert the csv file to xml
+  -s, --sql             Convert the csv file to sql
+  -pdf, --pdf           Convert the csv file to pdf
+  -m, --md              Convert the csv file to markdown
+  -i, --image           Convert the csv file to an image
+  -o OUTPUT, --output OUTPUT
+                        The path to the output file
+  -v, --verbose         Print the table
+usage: csv_tools.py [-h] -p PATH [-d DELIMITER] [-q VALUE] [-x | -j | -t | -htm | -xm | -s | -pdf | -m | -i] [-o OUTPUT] [-v]
+
+This program contains lots of functions for working with csv files
+
+options:
+  -h, --help            show this help message and exit
+  -p PATH, --path PATH  The path to the csv file
+  -d DELIMITER, --delimiter DELIMITER
+                        The delimiter of the csv file, if not specified, the program will try to recognize the delimiter
+  -q VALUE, --query VALUE
+                        The value to search for in the csv file
+  -x, --xlsx            Convert the csv file to xlsx
+  -j, --json            Convert the csv file to json
+  -t, --txt             Convert the csv file to txt
+  -htm, --html          Convert the csv file to html
+  -xm, --xml            Convert the csv file to xml
+  -s, --sql             Convert the csv file to sql
+  -pdf, --pdf           Convert the csv file to pdf
+  -m, --md              Convert the csv file to markdown
+  -i, --image           Convert the csv file to an image
+  -o OUTPUT, --output OUTPUT
+                        The path to the output file
+  -v, --verbose         Print the table
+usage: csv_tools.py [-h] -p PATH [-d DELIMITER] [-q VALUE] [-x | -j | -t | -htm | -xm | -s | -pdf | -m | -i] [-o OUTPUT] [-v]
+
+This program contains lots of functions for working with csv files
+
+options:
+  -h, --help            show this help message and exit
+  -p PATH, --path PATH  The path to the csv file
+  -d DELIMITER, --delimiter DELIMITER
+                        The delimiter of the csv file, if not specified, the program will try to recognize the delimiter
+  -q VALUE, --query VALUE
+                        The value to search for in the csv file
+  -x, --xlsx            Convert the csv file to xlsx
+  -j, --json            Convert the csv file to json
+  -t, --txt             Convert the csv file to txt
+  -htm, --html          Convert the csv file to html
+  -xm, --xml            Convert the csv file to xml
+  -s, --sql             Convert the csv file to sql
+  -pdf, --pdf           Convert the csv file to pdf
+  -m, --md              Convert the csv file to markdown
+  -i, --image           Convert the csv file to an image
+  -o OUTPUT, --output OUTPUT
+                        The path to the output file
+  -v, --verbose         Print the table
+usage: csv_tools.py [-h] -p PATH [-d DELIMITER] [-q VALUE] [-x | -j | -t | -htm | -xm | -s | -pdf | -m | -i] [-o OUTPUT] [-v]
+
+This program contains lots of functions for working with csv files
+
+options:
+  -h, --help            show this help message and exit
+  -p PATH, --path PATH  The path to the csv file
+  -d DELIMITER, --delimiter DELIMITER
+                        The delimiter of the csv file, if not specified, the program will try to recognize the delimiter
+  -q VALUE, --query VALUE
+                        The value to search for in the csv file
+  -x, --xlsx            Convert the csv file to xlsx
+  -j, --json            Convert the csv file to json
+  -t, --txt             Convert the csv file to txt
+  -htm, --html          Convert the csv file to html
+  -xm, --xml            Convert the csv file to xml
+  -s, --sql             Convert the csv file to sql
+  -pdf, --pdf           Convert the csv file to pdf
+  -m, --md              Convert the csv file to markdown
+  -i, --image           Convert the csv file to an image
+  -o OUTPUT, --output OUTPUT
+                        The path to the output file
+  -v, --verbose         Print the table
+usage: csv_tools.py [-h] -p PATH [-d DELIMITER] [-q VALUE] [-x | -j | -t | -htm | -xm | -s | -pdf | -m | -i] [-o OUTPUT] [-v]
+
+This program contains lots of functions for working with csv files
+
+options:
+  -h, --help            show this help message and exit
+  -p PATH, --path PATH  The path to the csv file
+  -d DELIMITER, --delimiter DELIMITER
+                        The delimiter of the csv file, if not specified, the program will try to recognize the delimiter
+  -q VALUE, --query VALUE
+                        The value to search for in the csv file
+  -x, --xlsx            Convert the csv file to xlsx
+  -j, --json            Convert the csv file to json
+  -t, --txt             Convert the csv file to txt
+  -htm, --html          Convert the csv file to html
+  -xm, --xml            Convert the csv file to xml
+  -s, --sql             Convert the csv file to sql
+  -pdf, --pdf           Convert the csv file to pdf
+  -m, --md              Convert the csv file to markdown
+  -i, --image           Convert the csv file to an image
+  -o OUTPUT, --output OUTPUT
+                        The path to the output file
+  -v, --verbose         Print the table
+usage: csv_tools.py [-h] -p PATH [-d DELIMITER] [-q VALUE] [-x | -j | -t | -htm | -xm | -s | -pdf | -m | -i] [-o OUTPUT] [-v]
+
+This program contains lots of functions for working with csv files
+
+options:
+  -h, --help            show this help message and exit
+  -p PATH, --path PATH  The path to the csv file
+  -d DELIMITER, --delimiter DELIMITER
+                        The delimiter of the csv file, if not specified, the program will try to recognize the delimiter
+  -q VALUE, --query VALUE
+                        The value to search for in the csv file
+  -x, --xlsx            Convert the csv file to xlsx
+  -j, --json            Convert the csv file to json
+  -t, --txt             Convert the csv file to txt
+  -htm, --html          Convert the csv file to html
+  -xm, --xml            Convert the csv file to xml
+  -s, --sql             Convert the csv file to sql
+  -pdf, --pdf           Convert the csv file to pdf
+  -m, --md              Convert the csv file to markdown
+  -i, --image           Convert the csv file to an image
+  -o OUTPUT, --output OUTPUT
+                        The path to the output file
+  -v, --verbose         Print the table
+usage: csv_tools.py [-h] -p PATH [-d DELIMITER] [-q VALUE] [-x | -j | -t | -htm | -xm | -s | -pdf | -m | -i] [-o OUTPUT] [-v]
+
+This program contains lots of functions for working with csv files
+
+options:
+  -h, --help            show this help message and exit
+  -p PATH, --path PATH  The path to the csv file
+  -d DELIMITER, --delimiter DELIMITER
+                        The delimiter of the csv file, if not specified, the program will try to recognize the delimiter
+  -q VALUE, --query VALUE
+                        The value to search for in the csv file
+  -x, --xlsx            Convert the csv file to xlsx
+  -j, --json            Convert the csv file to json
+  -t, --txt             Convert the csv file to txt
+  -htm, --html          Convert the csv file to html
+  -xm, --xml            Convert the csv file to xml
+  -s, --sql             Convert the csv file to sql
+  -pdf, --pdf           Convert the csv file to pdf
+  -m, --md              Convert the csv file to markdown
+  -i, --image           Convert the csv file to an image
+  -o OUTPUT, --output OUTPUT
+                        The path to the output file
+  -v, --verbose         Print the table
+usage: csv_tools.py [-h] -p PATH [-d DELIMITER] [-q VALUE] [-x | -j | -t | -htm | -xm | -s | -pdf | -m | -i] [-o OUTPUT] [-v]
+
+This program contains lots of functions for working with csv files
+
+options:
+  -h, --help            show this help message and exit
+  -p PATH, --path PATH  The path to the csv file
+  -d DELIMITER, --delimiter DELIMITER
+                        The delimiter of the csv file, if not specified, the program will try to recognize the delimiter
+  -q VALUE, --query VALUE
+                        The value to search for in the csv file
+  -x, --xlsx            Convert the csv file to xlsx
+  -j, --json            Convert the csv file to json
+  -t, --txt             Convert the csv file to txt
+  -htm, --html          Convert the csv file to html
+  -xm, --xml            Convert the csv file to xml
+  -s, --sql             Convert the csv file to sql
+  -pdf, --pdf           Convert the csv file to pdf
+  -m, --md              Convert the csv file to markdown
+  -i, --image           Convert the csv file to an image
+  -o OUTPUT, --output OUTPUT
+                        The path to the output file
+  -v, --verbose         Print the table
+usage: csv_tools.py [-h] -p PATH [-d DELIMITER] [-q VALUE] [-x | -j | -t | -htm | -xm | -s | -pdf | -m | -i] [-o OUTPUT] [-v]
+
+This program contains lots of functions for working with csv files
+
+options:
+  -h, --help            show this help message and exit
+  -p PATH, --path PATH  The path to the csv file
+  -d DELIMITER, --delimiter DELIMITER
+                        The delimiter of the csv file, if not specified, the program will try to recognize the delimiter
+  -q VALUE, --query VALUE
+                        The value to search for in the csv file
+  -x, --xlsx            Convert the csv file to xlsx
+  -j, --json            Convert the csv file to json
+  -t, --txt             Convert the csv file to txt
+  -htm, --html          Convert the csv file to html
+  -xm, --xml            Convert the csv file to xml
+  -s, --sql             Convert the csv file to sql
+  -pdf, --pdf           Convert the csv file to pdf
+  -m, --md              Convert the csv file to markdown
+  -i, --image           Convert the csv file to an image
+  -o OUTPUT, --output OUTPUT
+                        The path to the output file
+  -v, --verbose         Print the table
+usage: csv_tools.py [-h] -p PATH [-d DELIMITER] [-q VALUE] [-x | -j | -t | -htm | -xm | -s | -pdf | -m | -i] [-o OUTPUT] [-v]
+
+This program contains lots of functions for working with csv files
+
+options:
+  -h, --help            show this help message and exit
+  -p PATH, --path PATH  The path to the csv file
+  -d DELIMITER, --delimiter DELIMITER
+                        The delimiter of the csv file, if not specified, the program will try to recognize the delimiter
+  -q VALUE, --query VALUE
+                        The value to search for in the csv file
+  -x, --xlsx            Convert the csv file to xlsx
+  -j, --json            Convert the csv file to json
+  -t, --txt             Convert the csv file to txt
+  -htm, --html          Convert the csv file to html
+  -xm, --xml            Convert the csv file to xml
+  -s, --sql             Convert the csv file to sql
+  -pdf, --pdf           Convert the csv file to pdf
+  -m, --md              Convert the csv file to markdown
+  -i, --image           Convert the csv file to an image
+  -o OUTPUT, --output OUTPUT
+                        The path to the output file
+  -v, --verbose         Print the table
+usage: csv_tools.py [-h] -p PATH [-d DELIMITER] [-q VALUE] [-x | -j | -t | -htm | -xm | -s | -pdf | -m | -i] [-o OUTPUT] [-v]
+
+This program contains lots of functions for working with csv files
+
+options:
+  -h, --help            show this help message and exit
+  -p PATH, --path PATH  The path to the csv file
+  -d DELIMITER, --delimiter DELIMITER
+                        The delimiter of the csv file, if not specified, the program will try to recognize the delimiter
+  -q VALUE, --query VALUE
+                        The value to search for in the csv file
+  -x, --xlsx            Convert the csv file to xlsx
+  -j, --json            Convert the csv file to json
+  -t, --txt             Convert the csv file to txt
+  -htm, --html          Convert the csv file to html
+  -xm, --xml            Convert the csv file to xml
+  -s, --sql             Convert the csv file to sql
+  -pdf, --pdf           Convert the csv file to pdf
+  -m, --md              Convert the csv file to markdown
+  -i, --image           Convert the csv file to an image
+  -o OUTPUT, --output OUTPUT
+                        The path to the output file
+  -v, --verbose         Print the table
+usage: csv_tools.py [-h] -p PATH [-d DELIMITER] [-q VALUE]
+                    [-x | -j | -t | -htm | -xm | -s | -pdf | -m | -i]
+                    [-o OUTPUT] [-v]
+
+This program contains lots of functions for working with csv files
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -p PATH, --path PATH  The path to the csv file
+  -d DELIMITER, --delimiter DELIMITER
+                        The delimiter of the csv file, if not specified, the
+                        program will try to recognize the delimiter
+  -q VALUE, --query VALUE
+                        The value to search for in the csv file
+  -x, --xlsx            Convert the csv file to xlsx
+  -j, --json            Convert the csv file to json
+  -t, --txt             Convert the csv file to txt
+  -htm, --html          Convert the csv file to html
+  -xm, --xml            Convert the csv file to xml
+  -s, --sql             Convert the csv file to sql
+  -pdf, --pdf           Convert the csv file to pdf
+  -m, --md              Convert the csv file to markdown
+  -i, --image           Convert the csv file to an image
+  -o OUTPUT, --output OUTPUT
+                        The path to the output file
+  -v, --verbose         Print the table
+usage: csv_tools.py [-h] -p PATH [-d DELIMITER] [-q VALUE]
+                    [-x | -j | -t | -htm | -xm | -s | -pdf | -m | -i]
+                    [-o OUTPUT] [-v]
+
+This program contains lots of functions for working with csv files
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -p PATH, --path PATH  The path to the csv file
+  -d DELIMITER, --delimiter DELIMITER
+                        The delimiter of the csv file, if not specified, the
+                        program will try to recognize the delimiter
+  -q VALUE, --query VALUE
+                        The value to search for in the csv file
+  -x, --xlsx            Convert the csv file to xlsx
+  -j, --json            Convert the csv file to json
+  -t, --txt             Convert the csv file to txt
+  -htm, --html          Convert the csv file to html
+  -xm, --xml            Convert the csv file to xml
+  -s, --sql             Convert the csv file to sql
+  -pdf, --pdf           Convert the csv file to pdf
+  -m, --md              Convert the csv file to markdown
+  -i, --image           Convert the csv file to an image
+  -o OUTPUT, --output OUTPUT
+                        The path to the output file
+  -v, --verbose         Print the table
+usage: csv_tools.py [-h] -p PATH [-d DELIMITER] [-q VALUE]
+                    [-x | -j | -t | -htm | -xm | -s | -pdf | -m | -i]
+                    [-o OUTPUT] [-v]
+
+This program contains lots of functions for working with csv files
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -p PATH, --path PATH  The path to the csv file
+  -d DELIMITER, --delimiter DELIMITER
+                        The delimiter of the csv file, if not specified, the
+                        program will try to recognize the delimiter
+  -q VALUE, --query VALUE
+                        The value to search for in the csv file
+  -x, --xlsx            Convert the csv file to xlsx
+  -j, --json            Convert the csv file to json
+  -t, --txt             Convert the csv file to txt
+  -htm, --html          Convert the csv file to html
+  -xm, --xml            Convert the csv file to xml
+  -s, --sql             Convert the csv file to sql
+  -pdf, --pdf           Convert the csv file to pdf
+  -m, --md              Convert the csv file to markdown
+  -i, --image           Convert the csv file to an image
+  -o OUTPUT, --output OUTPUT
+                        The path to the output file
+  -v, --verbose         Print the table
+usage: csv_tools.py [-h] -p PATH [-d DELIMITER] [-q VALUE]
+                    [-x | -j | -t | -htm | -xm | -s | -pdf | -m | -i]
+                    [-o OUTPUT] [-v]
+
+This program contains lots of functions for working with csv files
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -p PATH, --path PATH  The path to the csv file
+  -d DELIMITER, --delimiter DELIMITER
+                        The delimiter of the csv file, if not specified, the
+                        program will try to recognize the delimiter
+  -q VALUE, --query VALUE
+                        The value to search for in the csv file
+  -x, --xlsx            Convert the csv file to xlsx
+  -j, --json            Convert the csv file to json
+  -t, --txt             Convert the csv file to txt
+  -htm, --html          Convert the csv file to html
+  -xm, --xml            Convert the csv file to xml
+  -s, --sql             Convert the csv file to sql
+  -pdf, --pdf           Convert the csv file to pdf
+  -m, --md              Convert the csv file to markdown
+  -i, --image           Convert the csv file to an image
+  -o OUTPUT, --output OUTPUT
+                        The path to the output file
+  -v, --verbose         Print the table
+usage: csv_tools.py [-h] -p PATH [-d DELIMITER] [-q VALUE]
+                    [-x | -j | -t | -htm | -xm | -s | -pdf | -m | -i]
+                    [-o OUTPUT] [-v]
+
+This program contains lots of functions for working with csv files
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -p PATH, --path PATH  The path to the csv file
+  -d DELIMITER, --delimiter DELIMITER
+                        The delimiter of the csv file, if not specified, the
+                        program will try to recognize the delimiter
+  -q VALUE, --query VALUE
+                        The value to search for in the csv file
+  -x, --xlsx            Convert the csv file to xlsx
+  -j, --json            Convert the csv file to json
+  -t, --txt             Convert the csv file to txt
+  -htm, --html          Convert the csv file to html
+  -xm, --xml            Convert the csv file to xml
+  -s, --sql             Convert the csv file to sql
+  -pdf, --pdf           Convert the csv file to pdf
+  -m, --md              Convert the csv file to markdown
+  -i, --image           Convert the csv file to an image
+  -o OUTPUT, --output OUTPUT
+                        The path to the output file
+  -v, --verbose         Print the table
+usage: csv_tools.py [-h] -p PATH [-d DELIMITER] [-q VALUE]
+                    [-x | -j | -t | -htm | -xm | -s | -pdf | -m | -i]
+                    [-o OUTPUT] [-v]
+
+This program contains lots of functions for working with csv files
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -p PATH, --path PATH  The path to the csv file
+  -d DELIMITER, --delimiter DELIMITER
+                        The delimiter of the csv file, if not specified, the
+                        program will try to recognize the delimiter
+  -q VALUE, --query VALUE
+                        The value to search for in the csv file
+  -x, --xlsx            Convert the csv file to xlsx
+  -j, --json            Convert the csv file to json
+  -t, --txt             Convert the csv file to txt
+  -htm, --html          Convert the csv file to html
+  -xm, --xml            Convert the csv file to xml
+  -s, --sql             Convert the csv file to sql
+  -pdf, --pdf           Convert the csv file to pdf
+  -m, --md              Convert the csv file to markdown
+  -i, --image           Convert the csv file to an image
+  -o OUTPUT, --output OUTPUT
+                        The path to the output file
+  -v, --verbose         Print the table
+usage: csv_tools.py [-h] -p PATH [-d DELIMITER] [-q VALUE]
+                    [-x | -j | -t | -htm | -xm | -s | -pdf | -m | -i]
+                    [-o OUTPUT] [-v]
+
+This program contains lots of functions for working with csv files
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -p PATH, --path PATH  The path to the csv file
+  -d DELIMITER, --delimiter DELIMITER
+                        The delimiter of the csv file, if not specified, the
+                        program will try to recognize the delimiter
+  -q VALUE, --query VALUE
+                        The value to search for in the csv file
+  -x, --xlsx            Convert the csv file to xlsx
+  -j, --json            Convert the csv file to json
+  -t, --txt             Convert the csv file to txt
+  -htm, --html          Convert the csv file to html
+  -xm, --xml            Convert the csv file to xml
+  -s, --sql             Convert the csv file to sql
+  -pdf, --pdf           Convert the csv file to pdf
+  -m, --md              Convert the csv file to markdown
+  -i, --image           Convert the csv file to an image
+  -o OUTPUT, --output OUTPUT
+                        The path to the output file
+  -v, --verbose         Print the table
+usage: csv_tools.py [-h] -p PATH [-d DELIMITER] [-q VALUE]
+                    [-x | -j | -t | -htm | -xm | -s | -pdf | -m | -i]
+                    [-o OUTPUT] [-v]
+
+This program contains lots of functions for working with csv files
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -p PATH, --path PATH  The path to the csv file
+  -d DELIMITER, --delimiter DELIMITER
+                        The delimiter of the csv file, if not specified, the
+                        program will try to recognize the delimiter
+  -q VALUE, --query VALUE
+                        The value to search for in the csv file
+  -x, --xlsx            Convert the csv file to xlsx
+  -j, --json            Convert the csv file to json
+  -t, --txt             Convert the csv file to txt
+  -htm, --html          Convert the csv file to html
+  -xm, --xml            Convert the csv file to xml
+  -s, --sql             Convert the csv file to sql
+  -pdf, --pdf           Convert the csv file to pdf
+  -m, --md              Convert the csv file to markdown
+  -i, --image           Convert the csv file to an image
+  -o OUTPUT, --output OUTPUT
+                        The path to the output file
+  -v, --verbose         Print the table
+usage: csv_tools.py [-h] -p PATH [-d DELIMITER] [-q VALUE]
+                    [-x | -j | -t | -htm | -xm | -s | -pdf | -m | -i]
+                    [-o OUTPUT] [-v]
+
+This program contains lots of functions for working with csv files
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -p PATH, --path PATH  The path to the csv file
+  -d DELIMITER, --delimiter DELIMITER
+                        The delimiter of the csv file, if not specified, the
+                        program will try to recognize the delimiter
+  -q VALUE, --query VALUE
+                        The value to search for in the csv file
+  -x, --xlsx            Convert the csv file to xlsx
+  -j, --json            Convert the csv file to json
+  -t, --txt             Convert the csv file to txt
+  -htm, --html          Convert the csv file to html
+  -xm, --xml            Convert the csv file to xml
+  -s, --sql             Convert the csv file to sql
+  -pdf, --pdf           Convert the csv file to pdf
+  -m, --md              Convert the csv file to markdown
+  -i, --image           Convert the csv file to an image
+  -o OUTPUT, --output OUTPUT
+                        The path to the output file
+  -v, --verbose         Print the table
+usage: csv_tools.py [-h] -p PATH [-d DELIMITER] [-q VALUE]
+                    [-x | -j | -t | -htm | -xm | -s | -pdf | -m | -i]
+                    [-o OUTPUT] [-v]
+
+This program contains lots of functions for working with csv files
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -p PATH, --path PATH  The path to the csv file
+  -d DELIMITER, --delimiter DELIMITER
+                        The delimiter of the csv file, if not specified, the
+                        program will try to recognize the delimiter
+  -q VALUE, --query VALUE
+                        The value to search for in the csv file
+  -x, --xlsx            Convert the csv file to xlsx
+  -j, --json            Convert the csv file to json
+  -t, --txt             Convert the csv file to txt
+  -htm, --html          Convert the csv file to html
+  -xm, --xml            Convert the csv file to xml
+  -s, --sql             Convert the csv file to sql
+  -pdf, --pdf           Convert the csv file to pdf
+  -m, --md              Convert the csv file to markdown
+  -i, --image           Convert the csv file to an image
+  -o OUTPUT, --output OUTPUT
+                        The path to the output file
+  -v, --verbose         Print the table
+usage: csv_tools.py [-h] -p PATH [-d DELIMITER] [-q VALUE]
+                    [-x | -j | -t | -htm | -xm | -s | -pdf | -m | -i]
+                    [-o OUTPUT] [-v]
+
+This program contains lots of functions for working with csv files
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -p PATH, --path PATH  The path to the csv file
+  -d DELIMITER, --delimiter DELIMITER
+                        The delimiter of the csv file, if not specified, the
+                        program will try to recognize the delimiter
+  -q VALUE, --query VALUE
+                        The value to search for in the csv file
+  -x, --xlsx            Convert the csv file to xlsx
+  -j, --json            Convert the csv file to json
+  -t, --txt             Convert the csv file to txt
+  -htm, --html          Convert the csv file to html
+  -xm, --xml            Convert the csv file to xml
+  -s, --sql             Convert the csv file to sql
+  -pdf, --pdf           Convert the csv file to pdf
+  -m, --md              Convert the csv file to markdown
+  -i, --image           Convert the csv file to an image
+  -o OUTPUT, --output OUTPUT
+                        The path to the output file
+  -v, --verbose         Print the table
+usage: csv_tools.py [-h] -p PATH [-d DELIMITER] [-q VALUE]
+                    [-x | -j | -t | -htm | -xm | -s | -pdf | -m | -i]
+                    [-o OUTPUT] [-v]
+
+This program contains lots of functions for working with csv files
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -p PATH, --path PATH  The path to the csv file
+  -d DELIMITER, --delimiter DELIMITER
+                        The delimiter of the csv file, if not specified, the
+                        program will try to recognize the delimiter
+  -q VALUE, --query VALUE
+                        The value to search for in the csv file
+  -x, --xlsx            Convert the csv file to xlsx
+  -j, --json            Convert the csv file to json
+  -t, --txt             Convert the csv file to txt
+  -htm, --html          Convert the csv file to html
+  -xm, --xml            Convert the csv file to xml
+  -s, --sql             Convert the csv file to sql
+  -pdf, --pdf           Convert the csv file to pdf
+  -m, --md              Convert the csv file to markdown
+  -i, --image           Convert the csv file to an image
+  -o OUTPUT, --output OUTPUT
+                        The path to the output file
+  -v, --verbose         Print the table
+usage: csv_tools.py [-h] -p PATH [-d DELIMITER] [-q VALUE]
+                    [-x | -j | -t | -htm | -xm | -s | -pdf | -m | -i]
+                    [-o OUTPUT] [-v]
+
+This program contains lots of functions for working with csv files
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -p PATH, --path PATH  The path to the csv file
+  -d DELIMITER, --delimiter DELIMITER
+                        The delimiter of the csv file, if not specified, the
+                        program will try to recognize the delimiter
+  -q VALUE, --query VALUE
+                        The value to search for in the csv file
+  -x, --xlsx            Convert the csv file to xlsx
+  -j, --json            Convert the csv file to json
+  -t, --txt             Convert the csv file to txt
+  -htm, --html          Convert the csv file to html
+  -xm, --xml            Convert the csv file to xml
+  -s, --sql             Convert the csv file to sql
+  -pdf, --pdf           Convert the csv file to pdf
+  -m, --md              Convert the csv file to markdown
+  -i, --image           Convert the csv file to an image
+  -o OUTPUT, --output OUTPUT
+                        The path to the output file
+  -v, --verbose         Print the table
+usage: csv_tools.py [-h] -p PATH [-d DELIMITER] [-q VALUE]
+                    [-x | -j | -t | -htm | -xm | -s | -pdf | -m | -i]
+                    [-o OUTPUT] [-v]
+
+This program contains lots of functions for working with csv files
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -p PATH, --path PATH  The path to the csv file
+  -d DELIMITER, --delimiter DELIMITER
+                        The delimiter of the csv file, if not specified, the
+                        program will try to recognize the delimiter
+  -q VALUE, --query VALUE
+                        The value to search for in the csv file
+  -x, --xlsx            Convert the csv file to xlsx
+  -j, --json            Convert the csv file to json
+  -t, --txt             Convert the csv file to txt
+  -htm, --html          Convert the csv file to html
+  -xm, --xml            Convert the csv file to xml
+  -s, --sql             Convert the csv file to sql
+  -pdf, --pdf           Convert the csv file to pdf
+  -m, --md              Convert the csv file to markdown
+  -i, --image           Convert the csv file to an image
+  -o OUTPUT, --output OUTPUT
+                        The path to the output file
+  -v, --verbose         Print the table
+usage: csv_tools.py [-h] -p PATH [-d DELIMITER] [-q VALUE]
+                    [-x | -j | -t | -htm | -xm | -s | -pdf | -m | -i]
+                    [-o OUTPUT] [-v]
+
+This program contains lots of functions for working with csv files
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -p PATH, --path PATH  The path to the csv file
+  -d DELIMITER, --delimiter DELIMITER
+                        The delimiter of the csv file, if not specified, the
+                        program will try to recognize the delimiter
+  -q VALUE, --query VALUE
+                        The value to search for in the csv file
+  -x, --xlsx            Convert the csv file to xlsx
+  -j, --json            Convert the csv file to json
+  -t, --txt             Convert the csv file to txt
+  -htm, --html          Convert the csv file to html
+  -xm, --xml            Convert the csv file to xml
+  -s, --sql             Convert the csv file to sql
+  -pdf, --pdf           Convert the csv file to pdf
+  -m, --md              Convert the csv file to markdown
+  -i, --image           Convert the csv file to an image
+  -o OUTPUT, --output OUTPUT
+                        The path to the output file
+  -v, --verbose         Print the table
+usage: csv_tools.py [-h] -p PATH [-d DELIMITER] [-q VALUE]
+                    [-x | -j | -t | -htm | -xm | -s | -pdf | -m | -i]
+                    [-o OUTPUT] [-v]
+
+This program contains lots of functions for working with csv files
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -p PATH, --path PATH  The path to the csv file
+  -d DELIMITER, --delimiter DELIMITER
+                        The delimiter of the csv file, if not specified, the
+                        program will try to recognize the delimiter
+  -q VALUE, --query VALUE
+                        The value to search for in the csv file
+  -x, --xlsx            Convert the csv file to xlsx
+  -j, --json            Convert the csv file to json
+  -t, --txt             Convert the csv file to txt
+  -htm, --html          Convert the csv file to html
+  -xm, --xml            Convert the csv file to xml
+  -s, --sql             Convert the csv file to sql
+  -pdf, --pdf           Convert the csv file to pdf
+  -m, --md              Convert the csv file to markdown
+  -i, --image           Convert the csv file to an image
+  -o OUTPUT, --output OUTPUT
+                        The path to the output file
+  -v, --verbose         Print the table
+usage: csv_tools.py [-h] -p PATH [-d DELIMITER] [-q VALUE]
+                    [-x | -j | -t | -htm | -xm | -s | -pdf | -m | -i]
+                    [-o OUTPUT] [-v]
+
+This program contains lots of functions for working with csv files
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -p PATH, --path PATH  The path to the csv file
+  -d DELIMITER, --delimiter DELIMITER
+                        The delimiter of the csv file, if not specified, the
+                        program will try to recognize the delimiter
+  -q VALUE, --query VALUE
+                        The value to search for in the csv file
+  -x, --xlsx            Convert the csv file to xlsx
+  -j, --json            Convert the csv file to json
+  -t, --txt             Convert the csv file to txt
+  -htm, --html          Convert the csv file to html
+  -xm, --xml            Convert the csv file to xml
+  -s, --sql             Convert the csv file to sql
+  -pdf, --pdf           Convert the csv file to pdf
+  -m, --md              Convert the csv file to markdown
+  -i, --image           Convert the csv file to an image
+  -o OUTPUT, --output OUTPUT
+                        The path to the output file
+  -v, --verbose         Print the table
+usage: csv_tools.py [-h] -p PATH [-d DELIMITER] [-q VALUE]
+                    [-x | -j | -t | -htm | -xm | -s | -pdf | -m | -i]
+                    [-o OUTPUT] [-v]
+
+This program contains lots of functions for working with csv files
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -p PATH, --path PATH  The path to the csv file
+  -d DELIMITER, --delimiter DELIMITER
+                        The delimiter of the csv file, if not specified, the
+                        program will try to recognize the delimiter
+  -q VALUE, --query VALUE
+                        The value to search for in the csv file
+  -x, --xlsx            Convert the csv file to xlsx
+  -j, --json            Convert the csv file to json
+  -t, --txt             Convert the csv file to txt
+  -htm, --html          Convert the csv file to html
+  -xm, --xml            Convert the csv file to xml
+  -s, --sql             Convert the csv file to sql
+  -pdf, --pdf           Convert the csv file to pdf
+  -m, --md              Convert the csv file to markdown
+  -i, --image           Convert the csv file to an image
+  -o OUTPUT, --output OUTPUT
+                        The path to the output file
+  -v, --verbose         Print the table
+usage: csv_tools.py [-h] -p PATH [-d DELIMITER] [-q VALUE]
+                    [-x | -j | -t | -htm | -xm | -s | -pdf | -m | -i]
+                    [-o OUTPUT] [-v]
+
+This program contains lots of functions for working with csv files
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -p PATH, --path PATH  The path to the csv file
+  -d DELIMITER, --delimiter DELIMITER
+                        The delimiter of the csv file, if not specified, the
+                        program will try to recognize the delimiter
+  -q VALUE, --query VALUE
+                        The value to search for in the csv file
+  -x, --xlsx            Convert the csv file to xlsx
+  -j, --json            Convert the csv file to json
+  -t, --txt             Convert the csv file to txt
+  -htm, --html          Convert the csv file to html
+  -xm, --xml            Convert the csv file to xml
+  -s, --sql             Convert the csv file to sql
+  -pdf, --pdf           Convert the csv file to pdf
+  -m, --md              Convert the csv file to markdown
+  -i, --image           Convert the csv file to an image
+  -o OUTPUT, --output OUTPUT
+                        The path to the output file
+  -v, --verbose         Print the table
+usage: csv_tools.py [-h] -p PATH [-d DELIMITER] [-q VALUE]
+                    [-x | -j | -t | -htm | -xm | -s | -pdf | -m | -i]
+                    [-o OUTPUT] [-v]
+
+This program contains lots of functions for working with csv files
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -p PATH, --path PATH  The path to the csv file
+  -d DELIMITER, --delimiter DELIMITER
+                        The delimiter of the csv file, if not specified, the
+                        program will try to recognize the delimiter
+  -q VALUE, --query VALUE
+                        The value to search for in the csv file
+  -x, --xlsx            Convert the csv file to xlsx
+  -j, --json            Convert the csv file to json
+  -t, --txt             Convert the csv file to txt
+  -htm, --html          Convert the csv file to html
+  -xm, --xml            Convert the csv file to xml
+  -s, --sql             Convert the csv file to sql
+  -pdf, --pdf           Convert the csv file to pdf
+  -m, --md              Convert the csv file to markdown
+  -i, --image           Convert the csv file to an image
+  -o OUTPUT, --output OUTPUT
+                        The path to the output file
+  -v, --verbose         Print the table
+usage: csv_tools.py [-h] -p PATH [-d DELIMITER] [-q VALUE] [-x | -j | -t | -htm | -xm | -s | -pdf | -m | -i] [-o OUTPUT] [-v]
+
+This program contains lots of functions for working with csv files
+
+options:
+  -h, --help            show this help message and exit
+  -p PATH, --path PATH  The path to the csv file
+  -d DELIMITER, --delimiter DELIMITER
+                        The delimiter of the csv file, if not specified, the program will try to recognize the delimiter
+  -q VALUE, --query VALUE
+                        The value to search for in the csv file
+  -x, --xlsx            Convert the csv file to xlsx
+  -j, --json            Convert the csv file to json
+  -t, --txt             Convert the csv file to txt
+  -htm, --html          Convert the csv file to html
+  -xm, --xml            Convert the csv file to xml
+  -s, --sql             Convert the csv file to sql
+  -pdf, --pdf           Convert the csv file to pdf
+  -m, --md              Convert the csv file to markdown
+  -i, --image           Convert the csv file to an image
+  -o OUTPUT, --output OUTPUT
+                        The path to the output file
+  -v, --verbose         Print the table
+usage: csv_tools.py [-h] -p PATH [-d DELIMITER] [-q VALUE] [-x | -j | -t | -htm | -xm | -s | -pdf | -m | -i] [-o OUTPUT] [-v]
+
+
+
 
 ```bash
 python3 csv_tools.py -h
