@@ -154,10 +154,10 @@ cython_debug/
 out.*
 output.*
 *.pdf
-big.csv
 *.xml
 *.xlsx
 *.xls
 test.*
 *.log
+
 

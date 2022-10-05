@@ -14,6 +14,15 @@ from PIL import Image, ImageDraw, ImageFont
 import pandas as pd
 import xlsxwriter
 import matplotlib.pyplot as plt
+import sentry_sdk
+
+sentry_sdk.init(
+    dsn="https://625283987ad44866a380211753df2f58@o1363527.ingest.sentry.io/4503932642656256",
+    # Set traces_sample_rate to 1.0 to capture 100%
+    # of transactions for performance monitoring.
+    # We recommend adjusting this value in production.
+    traces_sample_rate=1.0,
+)
 
 
 def recognize_delimiter(csv_file_path):
@@ -134,16 +143,16 @@ def format_table_as_pdf(pandas_table, output_file_path):
     table.set_fontsize(12)
     table.scale(3, 3)
     plt.savefig(output_file_path, bbox_inches="tight", pad_inches=0)
-    
-    
-    
-    
+
+
 def convert_pandas_table_as_image(pandas_table, output_file_path):
     """This function converts a pandas table into an image
     The size of the image is determined by the number of rows and columns in the table
     The size of the font is filling the specific rectangle it is in
     """
-    print("This function does not always work and is subject to change, the output may not be what you expect,\n but it is still a cool feature, so I left it in")
+    print(
+        "This function does not always work and is subject to change, the output may not be what you expect,\n but it is still a cool feature, so I left it in"
+    )
     if not output_file_path:
         output_file_path = f"output{time.time()}.png"
     elif not output_file_path.endswith(".png"):
@@ -170,13 +179,19 @@ def convert_pandas_table_as_image(pandas_table, output_file_path):
         # create a new image
         image = Image.new("RGB", (image_width, image_height), (255, 255, 255))
     except MemoryError as e:
-        print(f"Memory Error: Please use a smaller image width and height,trying with {image_width-1000}x{image_height-1000}")
+        print(
+            f"Memory Error: Please use a smaller image width and height,trying with {image_width-1000}x{image_height-1000}"
+        )
         try:
-            image = Image.new("RGB", (image_width-1000, image_height-1000), (255, 255, 255))
+            image = Image.new(
+                "RGB", (image_width - 1000, image_height - 1000), (255, 255, 255)
+            )
         except MemoryError:
-            print(f"Memory Error: Please use a smaller image width and height,autofix failed")
-        
-    if image:    
+            print(
+                f"Memory Error: Please use a smaller image width and height,autofix failed"
+            )
+
+    if image:
         # create a new draw
         draw = ImageDraw.Draw(image)
 
@@ -195,20 +210,15 @@ def convert_pandas_table_as_image(pandas_table, output_file_path):
         # save the image
         image.save(output_file_path)
         # close the image
-        
+
     else:
         print("Image creation failed")
-        
-        
-        
-        
-    
-    
-    
+
+
 def format_csv(csv_file_path):
-    # this function formats a csv file to be more readable and easier to work with. 
-    #The functionalty of the csv file must be preserved
-    #The function does not write to a file, it returns a string
+    # this function formats a csv file to be more readable and easier to work with.
+    # The functionalty of the csv file must be preserved
+    # The function does not write to a file, it returns a string
     """This function formats a csv file to be more readable and easier to work with. The functionalty of the csv file must be preserved"""
     csv_string = ""
     with open(csv_file_path, "r") as csv_file:
@@ -219,11 +229,6 @@ def format_csv(csv_file_path):
             csv_string = csv_string[:-1]
             csv_string += "\n"
     return csv_string
-    
-    
-    
-        
-    
 
 
 def print_pandas_table(pandas_table):
@@ -338,7 +343,14 @@ group.add_argument(
     const="image",
     dest="format",
 )
-group.add_argument("-c", "--csv", help="format the CSV file if it is poorly indented etc.", action="store_const", const="csv", dest="format")
+group.add_argument(
+    "-c",
+    "--csv",
+    help="format the CSV file if it is poorly indented etc.",
+    action="store_const",
+    const="csv",
+    dest="format",
+)
 
 
 parser.add_argument(
@@ -457,19 +469,18 @@ if __name__ == "__main__":
                 and args.format != "image"
                 and args.format != "csv"
             ):
-            
+
                 print("The output file was not specified, the output will be printed")
                 print(output)
-                
+
             elif args.format == "csv" and not args.output:
                 print("The output file was not specified, the table will be printed")
                 print_pandas_table(pandas_table)
             elif args.format == "csv" and args.output:
-                #write the csv file from the string, each line is a row
+                # write the csv file from the string, each line is a row
                 with open(args.output, "w") as output_file:
                     output_file.write(output)
-                
-            
+
             elif (
                 args.format == "xlsx"
                 and not args.output
