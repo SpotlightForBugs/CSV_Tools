@@ -21,7 +21,7 @@ pip install -r requirements.txt
 
 ## Usage
 
-usage: csv_tools.py [-h] -p PATH [-d DELIMITER] [-q VALUE] [-x | -j | -t | -htm | -xm | -s | -pdf | -m | -i] [-o OUTPUT] [-v]
+usage: csv_tools.py [-h] -p PATH [-d DELIMITER] [-q VALUE] [-x | -j | -t | -htm | -xm | -s | -pdf | -m | -i | -c] [-o OUTPUT] [-v]
 
 This program contains lots of functions for working with csv files
 
@@ -41,6 +41,7 @@ options:
   -pdf, --pdf           Convert the csv file to pdf
   -m, --md              Convert the csv file to markdown
   -i, --image           Convert the csv file to an image
+  -c, --csv             format the CSV file if it is poorly indented etc.
   -o OUTPUT, --output OUTPUT
                         The path to the output file
   -v, --verbose         Print the table
