@@ -20,7 +20,7 @@ pip install -r requirements.txt
 ---
 
 ## Usage
-
+```fish
 usage: csv_tools.py [-h] -p PATH [-d DELIMITER] [-q VALUE] [-x | -j | -t | -htm | -xm | -s | -pdf | -m | -i | -c] [-o OUTPUT] [-v]
 
 This program contains lots of functions for working with csv files
@@ -45,5 +45,13 @@ options:
   -o OUTPUT, --output OUTPUT
                         The path to the output file
   -v, --verbose         Print the table
-
+```
 <!--end_of_usage-->
+
+
+### inspired by P.B.
+
+
+
+
+
