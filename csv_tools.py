@@ -143,6 +143,7 @@ def convert_pandas_table_as_image(pandas_table, output_file_path):
     The size of the image is determined by the number of rows and columns in the table
     The size of the font is filling the specific rectangle it is in
     """
+    print("This function does not always work and is subject to change, the output may not be what you expect,\n but it is still a cool feature, so I left it in")
     if not output_file_path:
         output_file_path = f"output{time.time()}.png"
     elif not output_file_path.endswith(".png"):

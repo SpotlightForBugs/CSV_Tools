@@ -45,7 +45,7 @@ options:
   -o OUTPUT, --output OUTPUT
                         The path to the output file
   -v, --verbose         Print the table
-```
+
 <!--end_of_usage-->
 
 
