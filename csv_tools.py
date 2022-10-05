@@ -10,6 +10,7 @@ import os
 import re
 import sys
 import time
+from PIL import Image, ImageDraw, ImageFont
 import pandas as pd
 import xlsxwriter
 import matplotlib.pyplot as plt
@@ -138,20 +139,68 @@ def format_table_as_pdf(pandas_table, output_file_path):
     
     
 def convert_pandas_table_as_image(pandas_table, output_file_path):
-    """This function converts a pandas table into an image"""
+    """This function converts a pandas table into an image
+    The size of the image is determined by the number of rows and columns in the table
+    The size of the font is filling the specific rectangle it is in
+    """
     if not output_file_path:
         output_file_path = f"output{time.time()}.png"
     elif not output_file_path.endswith(".png"):
         output_file_path += ".png"
-    plt.axis("tight")
-    plt.axis("off")
-    table = plt.table(
-        cellText=pandas_table.values, colLabels=pandas_table.columns, loc="center"
-    )
-    table.auto_set_font_size(True)
-    table.set_fontsize(12)
-    table.scale(3, 3)
-    plt.savefig(output_file_path, bbox_inches="tight", pad_inches=0)
+
+    # this function converts a pandas table into an image, default output file is output.png
+
+    # get the number of rows and columns of the table
+    row_count = len(pandas_table.index)
+    column_count = len(pandas_table.columns)
+
+    # get the width and height of the image
+    image_width = 5000
+    image_height = 5000
+
+    # get the width and height of each cell
+    cell_width = image_width / column_count
+    cell_height = image_height / row_count
+
+    # get the height of the font
+    font_height = cell_height / 1.5
+
+    try:
+        # create a new image
+        image = Image.new("RGB", (image_width, image_height), (255, 255, 255))
+    except MemoryError as e:
+        print(f"Memory Error: Please use a smaller image width and height,trying with {image_width-1000}x{image_height-1000}")
+        try:
+            image = Image.new("RGB", (image_width-1000, image_height-1000), (255, 255, 255))
+        except MemoryError:
+            print(f"Memory Error: Please use a smaller image width and height,autofix failed")
+        
+    if image:    
+        # create a new draw
+        draw = ImageDraw.Draw(image)
+
+        # get the font
+        font = ImageFont.truetype("arial.ttf", int(font_height))
+
+        # draw the table
+        for index, row in pandas_table.iterrows():
+            for item_index, item in enumerate(row):
+                # calculate the x and y position of the text
+                x = item_index * cell_width
+                y = index * cell_height
+                # draw the text
+                draw.text((x, y), str(item), (0, 0, 0), font=font)
+
+        # save the image
+        image.save(output_file_path)
+        # close the image
+        
+    else:
+        print("Image creation failed")
+        
+        
+        
+        
     
     
     
