@@ -87,11 +87,26 @@ parser.add_argument('-f','--format',help='The format to convert the csv file to'
 parser.add_argument('-o','--output',help='The path to the output file',action='store',dest='output')
 parser.add_argument('-v','--verbose',help='Print the table',action='store_true',dest='verbose',required=False,default=False)
 
-
+def put_argparse_help_in_the_readme():
+    """This function puts the argparse help in the readme, in the section called "Usage"""
+    readme = open('README.md','r')
+    readme_lines = readme.readlines()
+    readme.close()
+    readme = open('README.md','w')
+    for line in readme_lines:
+        if line == '## Usage\n':
+            readme.write(line)
+            readme.write(parser.format_help())
+        else:
+            readme.write(line)
+    readme.close()
+    
 
 
 args = parser.parse_args()
 
+
+put_argparse_help_in_the_readme()
 
 
 if __name__ == '__main__':
