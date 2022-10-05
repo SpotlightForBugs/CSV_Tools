@@ -18,10 +18,7 @@ import sentry_sdk
 
 sentry_sdk.init(
     dsn="https://625283987ad44866a380211753df2f58@o1363527.ingest.sentry.io/4503932642656256",
-    # Set traces_sample_rate to 1.0 to capture 100%
-    # of transactions for performance monitoring.
-    # We recommend adjusting this value in production.
-    traces_sample_rate=1.0,
+    traces_sample_rate=0.5,
 )
 
 

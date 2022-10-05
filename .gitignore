@@ -159,5 +159,5 @@ output.*
 *.xls
 test.*
 *.log
-
-
+.dist
+.vscode
