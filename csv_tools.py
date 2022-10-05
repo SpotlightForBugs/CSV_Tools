@@ -121,6 +121,13 @@ def format_pandas_table_as_txt(pandas_table):
 
 
 def format_table_as_pdf(pandas_table, output_file_path):
+    """
+    The format_table_as_pdf function converts a pandas table into a pdf table with matplotlib
+
+    :param pandas_table: Pass the pandas dataframe that will be converted to a pdf table
+    :param output_file_path: Specify the path of the output file
+    :return: A pdf file with the table in it
+    """
     if not output_file_path:
         output_file_path = f"output{time.time()}.pdf"
     elif not output_file_path.endswith(".pdf"):
