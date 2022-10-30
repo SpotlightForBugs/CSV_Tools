@@ -53,20 +53,12 @@ def format_pandas_table_as_xlsx(pandas_table, output_file_path, csv_file_path):
     with open(csv_file_path, "r") as csv_file:
         # read the csv file
         csv_reader = csv.reader(csv_file, delimiter=recognize_delimiter(csv_file_path))
-        # count the number of rows
-        row_count = 0
         # iterate over the rows in the csv file
-        for row in csv_reader:
-            # count the number of columns
-            col_count = 0
+        for row_count, row in enumerate(csv_reader):
             # iterate over the columns in the csv file
-            for item in row:
+            for col_count, item in enumerate(row):
                 # write the item to the excel file
                 worksheet.write(row_count, col_count, item)
-                # increment the column count
-                col_count += 1
-            # increment the row count
-            row_count += 1
     # close the excel file
     workbook.close()
     # close the csv file
@@ -98,14 +90,13 @@ def format_pandas_table_as_xml(pandas_table):
 
 def format_pandas_table_as_markdown(pandas_table, delimiter):
     """This function converts a pandas table into a markdown table"""
-    markdown = ""
-    markdown += "|"
+    markdown = "" + "|"
     for column in pandas_table.columns:
         markdown += f" {column} |"
     markdown += "\n"
     markdown += "|"
-    for column in pandas_table.columns:
-        markdown += f" --- |"
+    for _ in pandas_table.columns:
+        markdown += " --- |"
     markdown += "\n"
     for index, row in pandas_table.iterrows():
         markdown += "|"
@@ -169,12 +160,7 @@ def convert_pandas_table_as_image(pandas_table, output_file_path):
     image_width = 5000
     image_height = 5000
 
-    # get the width and height of each cell
-    cell_width = image_width / column_count
     cell_height = image_height / row_count
-
-    # get the height of the font
-    font_height = cell_height / 1.5
 
     try:
         # create a new image
@@ -189,16 +175,22 @@ def convert_pandas_table_as_image(pandas_table, output_file_path):
             )
         except MemoryError:
             print(
-                f"Memory Error: Please use a smaller image width and height,autofix failed"
+                "Memory Error: Please use a smaller image width and height,autofix failed"
             )
+
 
     if image:
         # create a new draw
         draw = ImageDraw.Draw(image)
 
+        # get the height of the font
+        font_height = cell_height / 1.5
+
         # get the font
         font = ImageFont.truetype("arial.ttf", int(font_height))
 
+        # get the width and height of each cell
+        cell_width = image_width / column_count
         # draw the table
         for index, row in pandas_table.iterrows():
             for item_index, item in enumerate(row):
@@ -210,7 +202,7 @@ def convert_pandas_table_as_image(pandas_table, output_file_path):
 
         # save the image
         image.save(output_file_path)
-        # close the image
+            # close the image
 
     else:
         print("Image creation failed")
@@ -392,11 +384,7 @@ put_argparse_help_in_the_readme()
 
 
 if __name__ == "__main__":
-    if args.delimiter:
-        delimiter = args.delimiter
-    else:
-        delimiter = recognize_delimiter(args.path)
-
+    delimiter = args.delimiter or recognize_delimiter(args.path)
     pandas_table = create_pandas_table_from_csv(args.path, delimiter)
 
     if args.format:
@@ -452,8 +440,6 @@ if __name__ == "__main__":
                         new_file_name = input("Enter the name of the new file: ")
                         with open(new_file_name, "w") as output_file:
                             output_file.write(output)
-                    else:
-                        pass
             else:
 
                 output_file_path = args.output
@@ -462,32 +448,30 @@ if __name__ == "__main__":
                 with open(output_file_path, "w") as output_file:
                     output_file.write(output)
 
-        else:
+        elif args.format not in ("xlsx", "pdf", "image", "csv"):
 
-            if args.format not in ("xlsx", "pdf", "image", "csv"):
+            print("The output file was not specified, the output will be printed")
+            print(output)
 
-                print("The output file was not specified, the output will be printed")
-                print(output)
+        elif args.format == "csv" and not args.output:
+            print("The output file was not specified, the table will be printed")
+            print_pandas_table(pandas_table)
+        elif args.format == "csv":
+            # write the csv file from the string, each line is a row
+            with open(args.output, "w") as output_file:
+                output_file.write(output)
 
-            elif args.format == "csv" and not args.output:
-                print("The output file was not specified, the table will be printed")
-                print_pandas_table(pandas_table)
-            elif args.format == "csv" and args.output:
-                # write the csv file from the string, each line is a row
-                with open(args.output, "w") as output_file:
-                    output_file.write(output)
-
-            elif (
-                args.format == "xlsx"
-                and not args.output
-                or args.format == "pdf"
-                and not args.output
-                or args.format == "image"
-                and not args.output
-            ):
-                print(
-                    "The output file was not specified, the output will be saved in the same folder as the csv file"
-                )
+        elif (
+            args.format == "xlsx"
+            and not args.output
+            or args.format == "pdf"
+            and not args.output
+            or args.format == "image"
+            and not args.output
+        ):
+            print(
+                "The output file was not specified, the output will be saved in the same folder as the csv file"
+            )
 
     if args.value:
         print(search_for_value_in_pandas_table(pandas_table, args.value))

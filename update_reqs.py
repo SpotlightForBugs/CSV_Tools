@@ -1,7 +1,7 @@
 # this file reads the file csv_tools.py and updates the requirements.txt file with the packages used in the file using the pipreqs module
 import os
 
-os.system("python -m pipreqs.pipreqs " + (os.getcwd()) + " --force")
+os.system(f"python -m pipreqs.pipreqs {os.getcwd()} --force")
 
 
 #!information concerning THIS file:
