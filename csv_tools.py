@@ -178,7 +178,6 @@ def convert_pandas_table_as_image(pandas_table, output_file_path):
                 "Memory Error: Please use a smaller image width and height,autofix failed"
             )
 
-
     if image:
         # create a new draw
         draw = ImageDraw.Draw(image)
@@ -202,7 +201,7 @@ def convert_pandas_table_as_image(pandas_table, output_file_path):
 
         # save the image
         image.save(output_file_path)
-            # close the image
+        # close the image
 
     else:
         print("Image creation failed")
