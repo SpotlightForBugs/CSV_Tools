@@ -1,4 +1,4 @@
-# CSV_Tools
+# CSV_Tools &copy; 2022 Johannes Häusler
 
 ---
 
