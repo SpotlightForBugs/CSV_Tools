@@ -47,14 +47,16 @@ def format_pandas_table_as_xlsx(pandas_table, output_file_path, csv_file_path):
     print(f"Output file path: {output_file_path}")
 
     # Save the pandas table to an Excel file
-    pandas_table.to_excel(output_file_path, sheet_name="Sheet1", index=False, header=False)
+    pandas_table.to_excel(
+        output_file_path, sheet_name="Sheet1", index=False, header=False
+    )
 
     # Open the Excel file
     workbook = xlsxwriter.Workbook(output_file_path)
     worksheet = workbook.add_worksheet()
 
     # Open the CSV file
-    with open(csv_file_path, "r", newline='') as csv_file:
+    with open(csv_file_path, "r", newline="") as csv_file:
         # Read the CSV file
         csv_reader = csv.reader(csv_file, delimiter=recognize_delimiter(csv_file_path))
 
@@ -70,8 +72,10 @@ def format_pandas_table_as_xlsx(pandas_table, output_file_path, csv_file_path):
 def format_pandas_table_as_sql(pandas_table):
     """This function converts a pandas table into sql commands that can be used to create a table"""
 
-
-    if not args.hide_warnings: print("This function assumes TEXT as data type for all columns, please change the data types if needed")
+    if not args.hide_warnings:
+        print(
+            "This function assumes TEXT as data type for all columns, please change the data types if needed"
+        )
     table_name = "table_name"
 
     sql = ""
@@ -158,13 +162,12 @@ def convert_pandas_table_as_image(csv_file_path, output_file_path):
 
     image_data = genfromtxt(csv_file_path, delimiter=recognize_delimiter(csv_file_path))
     from PIL import Image
+
     im = Image.fromarray(image_data)
     im = im.convert("RGB")
     if not output_file_path:
         output_file_path = f"{csv_file_path.replace('.csv', '')}.png"
     im.save(output_file_path, "PNG")
-
-
 
 
 def format_csv(csv_file_path):
@@ -328,9 +331,13 @@ parser.add_argument(
 )
 
 parser.add_argument(
-    "-hw", "--hide-warnings", help="show warnings in the console",
-    action="store_true", dest="hide_warnings", required=False, default=False,
-
+    "-hw",
+    "--hide-warnings",
+    help="show warnings in the console",
+    action="store_true",
+    dest="hide_warnings",
+    required=False,
+    default=False,
 )
 args = parser.parse_args()
 
@@ -377,9 +384,7 @@ if __name__ == "__main__":
         elif args.format == "dict":
             output = convert_pandas_table_to_dict(pandas_table)
         elif args.format == "md":
-            output = format_pandas_table_as_markdown(
-                pandas_table, delimiter
-            )
+            output = format_pandas_table_as_markdown(pandas_table, delimiter)
         elif args.format == "txt":
             output = format_pandas_table_as_txt(pandas_table)
         elif args.format == "image":
@@ -390,10 +395,10 @@ if __name__ == "__main__":
             print(args.format)
 
         if (
-                args.output
-                and args.format != "xlsx"
-                and args.format != "pdf"
-                and args.format != "image"
+            args.output
+            and args.format != "xlsx"
+            and args.format != "pdf"
+            and args.format != "image"
         ):
             # if the file already exists, the program will ask the user if they want to overwrite it
             if os.path.exists(args.output):
@@ -422,11 +427,13 @@ if __name__ == "__main__":
 
         elif args.format not in ("xlsx", "pdf", "image", "csv"):
 
-            if not args.hide_warnings: print("The output file was not specified, the output will be printed")
+            if not args.hide_warnings:
+                print("The output file was not specified, the output will be printed")
             print(output)
 
         elif args.format == "csv" and not args.output:
-            if not args.hide_warnings: print("The output file was not specified, the table will be printed")
+            if not args.hide_warnings:
+                print("The output file was not specified, the table will be printed")
             print_pandas_table(pandas_table)
         elif args.format == "csv":
             # write the csv file from the string, each line is a row
@@ -434,12 +441,12 @@ if __name__ == "__main__":
                 output_file.write(output)
 
         elif (
-                args.format == "xlsx"
-                and not args.output
-                or args.format == "pdf"
-                and not args.output
-                or args.format == "image"
-                and not args.output
+            args.format == "xlsx"
+            and not args.output
+            or args.format == "pdf"
+            and not args.output
+            or args.format == "image"
+            and not args.output
         ):
             if not args.hide_warnings:
                 print(
