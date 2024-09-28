@@ -6,8 +6,8 @@
 import argparse
 import csv
 import os
+from numpy import genfromtxt
 import time
-from PIL import Image, ImageDraw, ImageFont
 import pandas as pd
 import xlsxwriter
 import matplotlib.pyplot as plt
@@ -38,38 +38,52 @@ def format_pandas_table_as_html(pandas_table):
 
 
 def format_pandas_table_as_xlsx(pandas_table, output_file_path, csv_file_path):
-    """This function converts a pandas table into xlsx and writes it to a file"""
+    """This function converts a pandas table into xlsx and writes it to a file."""
+    csv_file_path = os.path.abspath(csv_file_path)
 
-    pandas_table.to_excel(
-        output_file_path,
-        sheet_name=output_file_path.replace("xlsx", ""),
-        index=False,
-        header=False,
-    )
-    # open the excel file
+    # Set default output path if not provided
+    if not output_file_path:
+        output_file_path = f"{os.path.splitext(csv_file_path)[0]}.xlsx"
+    print(f"Output file path: {output_file_path}")
+
+    # Save the pandas table to an Excel file
+    pandas_table.to_excel(output_file_path, sheet_name="Sheet1", index=False, header=False)
+
+    # Open the Excel file
     workbook = xlsxwriter.Workbook(output_file_path)
     worksheet = workbook.add_worksheet()
-    # open the csv file
-    with open(csv_file_path, "r") as csv_file:
-        # read the csv file
+
+    # Open the CSV file
+    with open(csv_file_path, "r", newline='') as csv_file:
+        # Read the CSV file
         csv_reader = csv.reader(csv_file, delimiter=recognize_delimiter(csv_file_path))
-        # iterate over the rows in the csv file
+
+        # Write CSV rows to Excel file
         for row_count, row in enumerate(csv_reader):
-            # iterate over the columns in the csv file
             for col_count, item in enumerate(row):
-                # write the item to the excel file
                 worksheet.write(row_count, col_count, item)
-    # close the excel file
+
+    # Close the Excel workbook
     workbook.close()
-    # close the csv file
-    csv_file.close()
 
 
-def format_panadas_table_as_sql(pandas_table):
+def format_pandas_table_as_sql(pandas_table):
     """This function converts a pandas table into sql commands that can be used to create a table"""
+
+
+    if not args.hide_warnings: print("This function assumes TEXT as data type for all columns, please change the data types if needed")
+    table_name = "table_name"
+
     sql = ""
+
+    sql += f"CREATE TABLE {table_name} (\n"
+
+    for column in pandas_table.columns:
+        sql += f"    {column} TEXT,\n"
+    sql = sql.rstrip(",\n") + "\n);\n\n"
+
     for index, row in pandas_table.iterrows():
-        sql += "INSERT INTO table_name VALUES ("
+        sql += f"INSERT INTO {table_name} VALUES ("
         for item in row:
             sql += f"'{item}',"
         sql = sql[:-1]
@@ -90,6 +104,9 @@ def format_pandas_table_as_xml(pandas_table):
 
 def format_pandas_table_as_markdown(pandas_table, delimiter):
     """This function converts a pandas table into a markdown table"""
+
+    delimiter = delimiter
+
     markdown = "" + "|"
     for column in pandas_table.columns:
         markdown += f" {column} |"
@@ -137,74 +154,17 @@ def format_table_as_pdf(pandas_table, output_file_path):
     plt.savefig(output_file_path, bbox_inches="tight", pad_inches=0)
 
 
-def convert_pandas_table_as_image(pandas_table, output_file_path):
-    """This function converts a pandas table into an image
-    The size of the image is determined by the number of rows and columns in the table
-    The size of the font is filling the specific rectangle it is in
-    """
-    print(
-        "This function does not always work and is subject to change, the output may not be what you expect,\n but it is still a cool feature, so I left it in"
-    )
+def convert_pandas_table_as_image(csv_file_path, output_file_path):
+
+    image_data = genfromtxt(csv_file_path, delimiter=recognize_delimiter(csv_file_path))
+    from PIL import Image
+    im = Image.fromarray(image_data)
+    im = im.convert("RGB")
     if not output_file_path:
-        output_file_path = f"output{time.time()}.png"
-    elif not output_file_path.endswith(".png"):
-        output_file_path += ".png"
+        output_file_path = f"{csv_file_path.replace('.csv', '')}.png"
+    im.save(output_file_path, "PNG")
 
-    # this function converts a pandas table into an image, default output file is output.png
 
-    # get the number of rows and columns of the table
-    row_count = len(pandas_table.index)
-    column_count = len(pandas_table.columns)
-
-    # get the width and height of the image
-    image_width = 5000
-    image_height = 5000
-
-    cell_height = image_height / row_count
-
-    try:
-        # create a new image
-        image = Image.new("RGB", (image_width, image_height), (255, 255, 255))
-    except MemoryError as e:
-        print(
-            f"Memory Error: Please use a smaller image width and height,trying with {image_width-1000}x{image_height-1000}"
-        )
-        try:
-            image = Image.new(
-                "RGB", (image_width - 1000, image_height - 1000), (255, 255, 255)
-            )
-        except MemoryError:
-            print(
-                "Memory Error: Please use a smaller image width and height,autofix failed"
-            )
-
-    if image:
-        # create a new draw
-        draw = ImageDraw.Draw(image)
-
-        # get the height of the font
-        font_height = cell_height / 1.5
-
-        # get the font
-        font = ImageFont.truetype("arial.ttf", int(font_height))
-
-        # get the width and height of each cell
-        cell_width = image_width / column_count
-        # draw the table
-        for index, row in pandas_table.iterrows():
-            for item_index, item in enumerate(row):
-                # calculate the x and y position of the text
-                x = item_index * cell_width
-                y = index * cell_height
-                # draw the text
-                draw.text((x, y), str(item), (0, 0, 0), font=font)
-
-        # save the image
-        image.save(output_file_path)
-        # close the image
-
-    else:
-        print("Image creation failed")
 
 
 def format_csv(csv_file_path):
@@ -231,11 +191,19 @@ def print_pandas_table(pandas_table):
 def search_for_value_in_pandas_table(pandas_table, value):
     """This function searches for a value in a pandas table and returns the row where the value is found
     ignore case"""
+    i = 0
     for index, row in pandas_table.iterrows():
+        i += 1
+
         for item in row:
             if str(item).lower() == str(value).lower():
-                return row
-    return f"{value} was not found"
+                return f"There is an item with the value {value} in row {i}"
+    i = 0
+    for index, row in pandas_table.iterrows():
+        i += 1
+        for item in row:
+            if str(value).lower() in str(item).lower():
+                return f"The value {value} was found in row {i}"
 
 
 def convert_pandas_table_to_dict(pandas_table):
@@ -252,6 +220,8 @@ parser.add_argument(
     "--delimiter",
     help="The delimiter of the csv file, if not specified, the program will try to recognize the delimiter",
     action="store",
+    required=False,
+    default=None,
     dest="delimiter",
 )
 parser.add_argument(
@@ -321,7 +291,7 @@ group.add_argument(
 )
 group.add_argument(
     "-m",
-    "--md",
+    "--markdown",
     help="Convert the csv file to markdown",
     action="store_const",
     const="md",
@@ -344,7 +314,6 @@ group.add_argument(
     dest="format",
 )
 
-
 parser.add_argument(
     "-o", "--output", help="The path to the output file", action="store", dest="output"
 )
@@ -356,6 +325,12 @@ parser.add_argument(
     dest="verbose",
     required=False,
     default=False,
+)
+
+parser.add_argument(
+    "-hw", "--hide-warnings", help="show warnings in the console",
+    action="store_true", dest="hide_warnings", required=False, default=False,
+
 )
 args = parser.parse_args()
 
@@ -378,9 +353,7 @@ def put_argparse_help_in_the_readme():
 
 args = parser.parse_args()
 
-
 put_argparse_help_in_the_readme()
-
 
 if __name__ == "__main__":
     delimiter = args.delimiter or recognize_delimiter(args.path)
@@ -398,29 +371,29 @@ if __name__ == "__main__":
         elif args.format == "xml":
             output = format_pandas_table_as_xml(pandas_table)
         elif args.format == "sql":
-            output = format_panadas_table_as_sql(pandas_table)
+            output = format_pandas_table_as_sql(pandas_table)
         elif args.format == "pdf":
             output = format_table_as_pdf(pandas_table, args.output)
         elif args.format == "dict":
             output = convert_pandas_table_to_dict(pandas_table)
         elif args.format == "md":
             output = format_pandas_table_as_markdown(
-                pandas_table, delimiter=recognize_delimiter(args.path)
+                pandas_table, delimiter
             )
         elif args.format == "txt":
             output = format_pandas_table_as_txt(pandas_table)
         elif args.format == "image":
-            output = convert_pandas_table_as_image(pandas_table, args.output)
+            output = convert_pandas_table_as_image(args.path, args.output)
         elif args.format == "csv":
             output = format_csv(args.path)
         else:
             print(args.format)
 
         if (
-            args.output
-            and args.format != "xlsx"
-            and args.format != "pdf"
-            and args.format != "image"
+                args.output
+                and args.format != "xlsx"
+                and args.format != "pdf"
+                and args.format != "image"
         ):
             # if the file already exists, the program will ask the user if they want to overwrite it
             if os.path.exists(args.output):
@@ -449,11 +422,11 @@ if __name__ == "__main__":
 
         elif args.format not in ("xlsx", "pdf", "image", "csv"):
 
-            print("The output file was not specified, the output will be printed")
+            if not args.hide_warnings: print("The output file was not specified, the output will be printed")
             print(output)
 
         elif args.format == "csv" and not args.output:
-            print("The output file was not specified, the table will be printed")
+            if not args.hide_warnings: print("The output file was not specified, the table will be printed")
             print_pandas_table(pandas_table)
         elif args.format == "csv":
             # write the csv file from the string, each line is a row
@@ -461,16 +434,17 @@ if __name__ == "__main__":
                 output_file.write(output)
 
         elif (
-            args.format == "xlsx"
-            and not args.output
-            or args.format == "pdf"
-            and not args.output
-            or args.format == "image"
-            and not args.output
+                args.format == "xlsx"
+                and not args.output
+                or args.format == "pdf"
+                and not args.output
+                or args.format == "image"
+                and not args.output
         ):
-            print(
-                "The output file was not specified, the output will be saved in the same folder as the csv file"
-            )
+            if not args.hide_warnings:
+                print(
+                    "The output file was not specified, the output will be saved in the same folder as the csv file"
+                )
 
     if args.value:
         print(search_for_value_in_pandas_table(pandas_table, args.value))

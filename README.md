@@ -24,7 +24,7 @@ pip install -r requirements.txt
 
 ## Usage
 ```fish
-usage: csv_tools.py [-h] -p PATH [-d DELIMITER] [-q VALUE] [-x | -j | -t | -htm | -xm | -s | -pdf | -m | -i | -c] [-o OUTPUT] [-v]
+usage: csv_tools.py [-h] -p PATH [-d DELIMITER] [-q VALUE] [-x | -j | -t | -htm | -xm | -s | -pdf | -m | -i | -c] [-o OUTPUT] [-v] [-hw]
 
 This program contains lots of functions for working with csv files
 
@@ -42,12 +42,13 @@ options:
   -xm, --xml            Convert the csv file to xml
   -s, --sql             Convert the csv file to sql
   -pdf, --pdf           Convert the csv file to pdf
-  -m, --md              Convert the csv file to markdown
+  -m, --markdown        Convert the csv file to markdown
   -i, --image           Convert the csv file to an image
   -c, --csv             format the CSV file if it is poorly indented etc.
   -o OUTPUT, --output OUTPUT
                         The path to the output file
   -v, --verbose         Print the table
+  -hw, --hide-warnings  show warnings in the console
 
 <!--end_of_usage-->
 
