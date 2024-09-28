@@ -13,6 +13,9 @@ It is written in Python and is available on GitHub.
 ## Installation
 
 ---
+Für Windows ist es notwendig, das Visual C++ Redistributable Package zu installieren.
+
+https://aka.ms/vs/17/release/vc_redist.x64.exe
 
 ```bash
 git clone https://gitHub.com/SpotlightForBugs/CSV_Tools.git
