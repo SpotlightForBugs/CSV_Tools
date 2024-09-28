@@ -346,7 +346,7 @@ def put_argparse_help_in_the_readme():
     end = readme.find("<!--end_of_usage-->")
     readme = readme[:start] + readme[end:]
     readme = readme.replace(
-        "<!--end_of_usage-->", f"{parser.format_help()}\n<!--end_of_usage-->"
+        "<!--end_of_usage-->", f"{parser.format_help()}\n```<!--end_of_usage-->"
     )
     open("README.md", "w").write(readme)
 
